@@ -1,0 +1,30 @@
+ # YAML_example_1.yaml
+
+#SEARCH QUERY OPTIONS:
+mission_name: Sentinel-2 #Sentinel-2         
+
+sensing_date_FROM: '2019-07-29T00:00:00.000Z'      # YYYY-MM-DDThh:mm:ss.cccZ ex: 2016-10-02T06:00:00.000Z
+sensing_date_TO:   '2019-08-23T00:00:00.000Z'        # YYYY-MM-DDThh:mm:ss.cccZ ex: 2016-10-10T12:00:00.000Z
+
+coordinates: -119.1618,56.4172:-116.7522,57.7449   #  lon1,lat1:lon2,lat2 
+             
+
+product_type: 'S2MSI2A'                            # Sentinel-2: S2MSI2A,S2MSI1C, S2MS2Ap
+
+#SEARCH RESULT OPTIONS:
+results: '100'                                       # maximum number of results per page [1,2,3,4,..]; default value = 25
+page: '1'                                           # page number [1,2,3,4,..]; default value = 1
+
+XMLfile: Canadafire_2019_36.xml                    # write the OpenSearch query results in a specified XML file. Default file is './OSquery-result.xml'
+CSVfile: Canadafire_2019_36.csv                    # write the list of product results in a specified CSV file. Default file is './products-list.csv'
+
+#DOWNLOAD OPTIONS:
+download_option: 'all'                             # what to download; possible options are:
+                                                        # 'manifest' to download the manifest of all products returned from the search
+                                                        # 'product' to download all products returned from the search
+                                                        # 'all' to download both
+
+concurrent_downloads: '5'
+
+offline_product_wait: '60'                        # minutes to wait until retrying the download of an offline product. Default value is 10  
+offline_product_retries: '6'                      # number of download retries for offline products. Default value is 40   
